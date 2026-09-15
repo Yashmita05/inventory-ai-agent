@@ -1,0 +1,504 @@
+_,,,,,,,,,,,,
+Order_ID,Customer_Name,Gender,Category,Product,Quantity,Unit_Price,Discount,Order_Date,Sales_Channel,Region,Phone,Product_Name_Duplicate
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+1000,Riya,Female,Clothing,Jacket,1,199,10,01-25-2024,Wholesale,,9876543210,Jacket
+1001,Sam,Female,GROCERIES,Rice,4,499,0,10-26-2024,Retail,,,Rice
+1002,Sam,,electronics,Tablet,,499,,01-02-2024,Wholesale,South,9876543210,Tablet
+1003,John,Male,Electronics,Mobile,,,5,03-27-2024,Retail,East,9876543210,Mobile
+1004,John,Female, CLOTHING ,Shirt,5,,10,08-30-2024,Retail,West,,Shirt
+1005,Maria,Female, CLOTHING ,Jacket,1,,,03-13-2024,Wholesale,North,-9876543119,Jacket
+1006,Sam,Female,Groceries,Bananas,2,199,,09-16-2024,Online,North,9876543210,Bananas
+1007,John,Male,electronics,Tablet,,,5,01-21-2024,Wholesale,,91-9988776655,Tablet
+1008,Riya,,Furniture,Chair,4,199,5,01-09-2025,Online,,,Chair
+1009,Ali,Male, CLOTHING ,Shirt,3,,10,07-14-2024,,West,,Shirt
+1010,Sam,Male,Electronics,Tablet,,,10,02-27-2024,,North,,Tablet
+1011,Wei,Female,Groceries,Bananas,5,1500,,03-19-2024,Online,North,-9876543119,Bananas
+1012,Asha,,Electronics,Tablet,,,,01-30-2025,Online,East,,Tablet
+1013,Chen,Male,electronics,Tablet,,,10,04-10-2025,Wholesale,,91-9988776655,Tablet
+1014,John,Female,GROCERIES,Bananas,3,,5,03-20-2024,Retail,North,,Bananas
+1015,Ali,Female,Groceries,Bananas,5,199,,03-16-2025,Retail,South,9876543210,Bananas
+1016,Emily,Female,Electronics,Mobile,1,199,5,07-25-2024,Retail,East,,Mobile
+1017,John,Female,Furniture,Sofa,1,,,02-10-2025,Wholesale,North,9876543210,Sofa
+1018,Sam,,Groceries,Apples,3,,15,02-26-2025,Wholesale,North,-9876543119,Apples
+1019,Emily,Male,Groceries,Bananas,,499,0,11-11-2024,Retail,South,9876543210,Bananas
+1020,Wei,Male,GROCERIES,Rice,,999,,03-20-2024,Retail,North,,Rice
+1021,Ali,Male,Groceries,Rice,4,999,10,02-11-2024,Online,North,9876543210,Rice
+1022,John,Male,electronics,Laptop,5,199,,03-26-2024,Online,East,9876543210,Laptop
+1023,Wei,Female,Clothing,Jacket,4,1500,0,10-30-2024,Online,East,,Jacket
+1024,Wei,,Furniture,Desk,,,10,10-31-2024,Online,South,9876543210,Desk
+1025,Chen,Male, CLOTHING ,Shirt,2,199,,12-26-2024,Online,,91-9988776655,Shirt
+1026,Wei,Male, CLOTHING ,Shirt,1,999,,03-30-2025,Wholesale,West,-9876543119,Shirt
+1027,Chen,Female, CLOTHING ,Shirt,,,15,04-15-2025,,East,,Shirt
+1028,John,,Clothing,Shirt,3,,10,12-29-2024,,,-9876543119,Shirt
+1029,Ali,,Electronics,Laptop,5,999,,10-26-2024,Wholesale,,-9876543119,Laptop
+1030,Emily,Male,Furniture,Sofa,4,1500,5,01-25-2025,Online,East,91-9988776655,Sofa
+1031,Sam,Female, CLOTHING ,Jacket,,199,0,01-02-2024,,West,9876543210,Jacket
+1032,Emily,Male,Clothing,Jacket,2,999,5,03-20-2024,Online,North,-9876543119,Jacket
+1033,Sam,Male,Furniture,Sofa,1,499,10,04-09-2024,Wholesale,,,Sofa
+1034,Ali,,Furniture,Desk,3,1500,,02-25-2024,Retail,South,,Desk
+1035,Chen,Male,Groceries,Apples,,1500,,09-26-2024,Retail,North,-9876543119,Apples
+1036,John,,GROCERIES,Bananas,,499,,04-29-2025,Online,West,9876543210,Bananas
+1037,Asha,,GROCERIES,Rice,4,,,03-25-2025,Retail,South,91-9988776655,Rice
+1038,John,Male, CLOTHING ,Jeans,3,499,,05-27-2024,,North,-9876543119,Jeans
+1039,Chen,Female,Electronics,Laptop,,499,,07-28-2024,,North,,Laptop
+1040,Chen,,Groceries,Apples,5,999,,11-01-2024,,,9876543210,Apples
+1041,Ahmed,Female,Furniture,Chair,3,,15,04-27-2025,Wholesale,West,91-9988776655,Chair
+1042,John,,GROCERIES,Bananas,2,,5,03-12-2025,Online,,,Bananas
+1043,Chen,Male,GROCERIES,Rice,,499,,10-11-2024,Wholesale,,,Rice
+1044,Asha,Female,Groceries,Bananas,1,999,15,01-13-2024,Retail,,-9876543119,Bananas
+1045,Ahmed,Female,Groceries,Rice,,,,09-04-2024,Wholesale,East,,Rice
+1046,Wei,,electronics,Mobile,3,199,,04-16-2025,Wholesale,North,9876543210,Mobile
+1047,Asha,Male,Groceries,Bananas,2,1500,,12-31-2024,,North,,Bananas
+1048,Asha,Female,Clothing,Jeans,,,0,06-01-2024,Online,East,,Jeans
+1049,Maria,Male,Electronics,Tablet,5,199,0,06-07-2024,,West,91-9988776655,Tablet
+1050,Riya,Male,electronics,Laptop,,199,15,11-03-2024,,West,-9876543119,Laptop
+1051,Chen,Female,Furniture,Desk,,,5,03-22-2024,Wholesale,,-9876543119,Desk
+1052,Emily,,GROCERIES,Bananas,1,999,10,04-02-2025,Retail,,,Bananas
+1053,Ahmed,, CLOTHING ,Jeans,4,999,,04-18-2024,,South,,Jeans
+1054,Sam,Male, CLOTHING ,Jeans,4,,0,05-31-2024,,South,91-9988776655,Jeans
+1055,Ahmed,Male,electronics,Mobile,,499,,01-15-2024,Wholesale,,91-9988776655,Mobile
+1056,Emily,,Groceries,Rice,,999,,11-30-2024,Online,South,,Rice
+1057,Emily,Female,GROCERIES,Bananas,3,499,5,04-22-2024,,South,,Bananas
+1058,Ahmed,Female,Groceries,Apples,4,1500,15,10-13-2024,Retail,,,Apples
+1059,Wei,Female,Electronics,Mobile,,499,0,02-13-2025,Online,West,,Mobile
+1060,Maria,Male,Groceries,Bananas,4,499,,12-01-2024,Retail,South,91-9988776655,Bananas
+1061,Emily,Female,electronics,Mobile,2,,,07-20-2024,Wholesale,West,-9876543119,Mobile
+1062,Chen,Male,electronics,Mobile,2,,,10-23-2024,Retail,North,91-9988776655,Mobile
+1063,Asha,,Groceries,Rice,3,999,,10-07-2024,,East,-9876543119,Rice
+1064,Wei,,Electronics,Tablet,4,499,15,01-16-2025,,South,9876543210,Tablet
+1065,Maria,Male,GROCERIES,Rice,3,,,05-01-2025,Online,North,,Rice
+1066,Asha,Male,Clothing,Jeans,2,,,08-17-2024,Retail,East,91-9988776655,Jeans
+1067,Asha,Male, CLOTHING ,Jacket,,,,02-27-2024,Retail,North,-9876543119,Jacket
+1068,Emily,,Groceries,Rice,,199,15,03-21-2024,Retail,South,,Rice
+1069,Emily,, CLOTHING ,Jacket,2,199,10,04-18-2024,Wholesale,East,9876543210,Jacket
+1070,John,,Furniture,Sofa,,999,,05-02-2024,Online,,-9876543119,Sofa
+1071,Asha,,GROCERIES,Rice,3,499,,01-23-2025,Wholesale,East,91-9988776655,Rice
+1072,Wei,,Groceries,Bananas,5,199,,05-21-2024,Retail,North,9876543210,Bananas
+1073,Sam,Male,GROCERIES,Rice,,,15,02-27-2025,Online,East,-9876543119,Rice
+1074,Ali,,Clothing,Jacket,,499,10,11-09-2024,Wholesale,West,-9876543119,Jacket
+1075,Riya,,Electronics,Laptop,,499,10,11-02-2024,Online,East,,Laptop
+1076,Maria,,Electronics,Laptop,1,1500,0,03-13-2025,Wholesale,East,,Laptop
+1077,Ali,Female,Groceries,Apples,1,199,0,03-01-2025,Wholesale,East,,Apples
+1078,Emily,,Furniture,Chair,1,1500,0,02-16-2024,,East,9876543210,Chair
+1079,Maria,Male,Groceries,Bananas,1,999,5,02-20-2024,Retail,South,9876543210,Bananas
+1080,Ahmed,Male, CLOTHING ,Shirt,5,499,,01-22-2025,,West,,Shirt
+1081,Asha,,Groceries,Apples,,,,02-15-2025,,North,91-9988776655,Apples
+1082,Ali,Male,Furniture,Desk,,999,,02-27-2024,Retail,North,-9876543119,Desk
+1083,Emily,Female,Groceries,Rice,4,,0,09-18-2024,Retail,East,-9876543119,Rice
+1084,Maria,Female,electronics,Laptop,2,,5,03-28-2024,Wholesale,East,,Laptop
+1085,John,Male, CLOTHING ,Shirt,4,999,,10-29-2024,Retail,East,,Shirt
+1086,Chen,Female,Clothing,Shirt,3,1500,5,01-28-2025,Wholesale,East,,Shirt
+1087,Ali,Male,electronics,Mobile,3,199,,12-10-2024,Retail,,91-9988776655,Mobile
+1088,Chen,,Electronics,Tablet,,,,02-22-2025,Wholesale,North,9876543210,Tablet
+1089,Asha,,electronics,Tablet,1,,0,12-31-2024,Wholesale,North,91-9988776655,Tablet
+1090,Asha,Male,Furniture,Desk,,1500,0,12-27-2024,Retail,East,,Desk
+1091,Maria,,GROCERIES,Rice,2,999,10,08-03-2024,,East,,Rice
+1092,Ahmed,Female,Groceries,Apples,4,499,5,07-24-2024,Wholesale,North,-9876543119,Apples
+1093,Ali,Male,Electronics,Laptop,1,199,,09-26-2024,,,91-9988776655,Laptop
+1094,Chen,,electronics,Mobile,,999,,02-13-2025,Online,West,,Mobile
+1095,Emily,Male,Clothing,Jeans,2,999,0,07-17-2024,Online,North,9876543210,Jeans
+1096,Ali,Female,electronics,Tablet,1,999,0,03-26-2024,Retail,West,,Tablet
+1097,Asha,Male,Electronics,Mobile,2,499,10,02-26-2025,Online,North,9876543210,Mobile
+1098,Ahmed,Male,electronics,Tablet,,1500,5,10-24-2024,Wholesale,East,91-9988776655,Tablet
+1099,Sam,Male,Groceries,Rice,1,,5,11-18-2024,Retail,South,9876543210,Rice
+1100,Asha,,GROCERIES,Rice,,1500,,11-20-2024,Retail,East,,Rice
+1101,Sam,Female,electronics,Mobile,,,5,02-06-2024,Retail,North,9876543210,Mobile
+1102,Ali,,Groceries,Apples,1,199,0,01-16-2024,Retail,East,91-9988776655,Apples
+1103,Chen,,GROCERIES,Apples,1,,0,04-18-2024,Retail,,,Apples
+1104,Asha,Male,Clothing,Jacket,1,999,,07-20-2024,,North,91-9988776655,Jacket
+1105,Asha,Male,GROCERIES,Rice,,,,01-28-2024,,West,,Rice
+1106,Riya,Male, CLOTHING ,Jeans,3,,,03-06-2025,Retail,South,-9876543119,Jeans
+1107,Wei,Male,Electronics,Mobile,4,,10,04-10-2025,,North,,Mobile
+1108,Sam,Male,Electronics,Laptop,,199,15,12-23-2024,,,,Laptop
+1109,Asha,Female,Furniture,Desk,3,199,0,10-15-2024,Wholesale,East,91-9988776655,Desk
+1110,Asha,,Clothing,Shirt,1,999,5,07-05-2024,Wholesale,North,-9876543119,Shirt
+1111,Sam,Male,GROCERIES,Apples,5,,5,02-13-2024,Online,West,,Apples
+1112,Sam,Male,Groceries,Bananas,3,,15,07-08-2024,,,-9876543119,Bananas
+1113,Ahmed,Female,Clothing,Shirt,1,,,12-28-2024,Online,West,,Shirt
+1114,Sam,Male,GROCERIES,Bananas,2,999,0,02-23-2024,Wholesale,South,,Bananas
+1115,Riya,Female,Groceries,Apples,4,,10,04-13-2025,Online,,-9876543119,Apples
+1116,Maria,Male, CLOTHING ,Shirt,,,,02-23-2024,Online,South,-9876543119,Shirt
+1117,Wei,Male, CLOTHING ,Jeans,2,999,10,02-17-2025,Wholesale,West,9876543210,Jeans
+1118,Sam,Male,Electronics,Laptop,2,1500,15,04-24-2025,Wholesale,South,,Laptop
+1119,Ali,Female, CLOTHING ,Jacket,,499,10,09-19-2024,,,-9876543119,Jacket
+1120,Emily,Female,Clothing,Jacket,4,,0,04-10-2024,Wholesale,,9876543210,Jacket
+1121,Ahmed,Female,Furniture,Chair,5,199,0,12-28-2024,Online,,-9876543119,Chair
+1122,Sam,Female,GROCERIES,Apples,4,199,0,01-23-2025,,West,-9876543119,Apples
+1123,Ali,Female,Clothing,Shirt,,,15,04-26-2025,Wholesale,North,91-9988776655,Shirt
+1124,John,Male,Groceries,Apples,2,499,0,05-15-2025,Online,North,9876543210,Apples
+1125,Ahmed,Male,electronics,Laptop,2,999,0,08-18-2024,Retail,,9876543210,Laptop
+1126,John,, CLOTHING ,Jeans,1,499,15,01-16-2024,Retail,North,91-9988776655,Jeans
+1127,Asha,Female,Electronics,Tablet,1,199,5,02-20-2024,Wholesale,South,,Tablet
+1128,Ali,, CLOTHING ,Shirt,4,199,,10-02-2024,Retail,West,9876543210,Shirt
+1129,John,Female,Groceries,Rice,4,,15,04-28-2024,Retail,North,,Rice
+1130,Riya,Female, CLOTHING ,Jacket,5,499,0,10-31-2024,Wholesale,East,,Jacket
+1131,Chen,Male,GROCERIES,Apples,2,199,,10-25-2024,Wholesale,West,,Apples
+1132,John,Female,electronics,Tablet,,,,05-01-2025,,West,,Tablet
+1133,John,Male, CLOTHING ,Jeans,4,1500,,04-18-2024,Online,South,9876543210,Jeans
+1134,Emily,Male,Groceries,Bananas,,999,15,04-18-2025,Online,East,-9876543119,Bananas
+1135,Ali,Female,electronics,Laptop,2,,,05-09-2025,Online,,,Laptop
+1136,Sam,,electronics,Laptop,3,999,5,09-20-2024,Retail,East,9876543210,Laptop
+1137,John,Female,electronics,Mobile,3,1500,10,03-21-2025,,,,Mobile
+1138,Ahmed,Female,Furniture,Desk,3,,10,10-24-2024,Wholesale,,,Desk
+1139,Emily,,Electronics,Mobile,,999,10,11-21-2024,Online,West,-9876543119,Mobile
+1140,Ali,Male,Clothing,Jeans,4,,0,02-24-2025,Wholesale,North,,Jeans
+1141,Riya,Male, CLOTHING ,Shirt,1,,15,12-16-2024,Online,South,,Shirt
+1142,Ali,Female,Furniture,Desk,1,999,,11-16-2024,Wholesale,,,Desk
+1143,Ali,,electronics,Laptop,3,999,10,05-14-2025,Retail,South,91-9988776655,Laptop
+1144,Maria,,GROCERIES,Apples,,199,0,04-11-2025,,South,9876543210,Apples
+1145,Maria,Female,electronics,Laptop,5,1500,15,09-23-2024,Retail,East,,Laptop
+1146,Sam,Male,GROCERIES,Bananas,,199,0,01-25-2025,Retail,East,9876543210,Bananas
+1147,Ali,, CLOTHING ,Jacket,5,,,01-27-2025,Retail,North,9876543210,Jacket
+1148,Asha,,Furniture,Chair,,199,5,02-27-2024,,North,,Chair
+1149,Ali,,GROCERIES,Apples,,499,5,05-03-2025,Online,South,9876543210,Apples
+1150,Maria,,Furniture,Sofa,1,,15,04-09-2024,Retail,East,-9876543119,Sofa
+1151,Asha,,Clothing,Shirt,3,499,,12-08-2024,Online,South,91-9988776655,Shirt
+1152,Sam,Male,Clothing,Jeans,2,499,,04-29-2025,Online,East,9876543210,Jeans
+1153,Wei,,GROCERIES,Rice,4,1500,0,05-18-2024,,North,9876543210,Rice
+1154,Emily,Female,Clothing,Shirt,5,,,04-27-2024,Retail,,91-9988776655,Shirt
+1155,Asha,,Groceries,Rice,1,499,10,03-05-2024,Online,South,-9876543119,Rice
+1156,Ali,,Clothing,Shirt,4,1500,15,07-16-2024,Wholesale,South,91-9988776655,Shirt
+1157,Emily,,Clothing,Jacket,1,199,0,09-12-2024,Retail,South,91-9988776655,Jacket
+1158,Maria,Male,electronics,Tablet,,999,10,03-30-2024,,East,,Tablet
+1159,Wei,Female,Clothing,Jeans,1,1500,15,11-29-2024,Retail,South,,Jeans
+1160,Ali,,electronics,Mobile,3,1500,10,09-24-2024,Retail,West,91-9988776655,Mobile
+1161,Sam,Male,Groceries,Bananas,3,499,,10-06-2024,,West,91-9988776655,Bananas
+1162,Maria,Female, CLOTHING ,Shirt,2,,15,07-06-2024,Online,East,,Shirt
+1163,Sam,Female,Furniture,Sofa,3,499,5,03-02-2024,Online,South,,Sofa
+1164,Chen,Male,Electronics,Laptop,,199,10,09-08-2024,,South,,Laptop
+1165,Chen,Male,Clothing,Jeans,1,499,5,05-30-2024,Wholesale,South,,Jeans
+1166,Asha,Male, CLOTHING ,Jacket,5,199,10,04-07-2025,Wholesale,West,9876543210,Jacket
+1167,Chen,,Groceries,Bananas,2,,5,05-27-2024,,,91-9988776655,Bananas
+1168,Chen,,Electronics,Laptop,,499,,01-05-2025,,North,,Laptop
+1169,Sam,Female,Groceries,Rice,4,999,5,04-24-2025,,West,-9876543119,Rice
+1170,Emily,Male,GROCERIES,Bananas,1,499,15,04-21-2025,Online,North,,Bananas
+1171,Ahmed,Male,Electronics,Mobile,2,199,,01-09-2025,,East,91-9988776655,Mobile
+1172,Wei,,GROCERIES,Rice,4,999,,08-30-2024,Online,West,9876543210,Rice
+1173,Chen,Female,Clothing,Jacket,2,999,10,03-25-2024,Retail,North,9876543210,Jacket
+1174,Riya,,Electronics,Tablet,,999,10,12-28-2024,Retail,South,91-9988776655,Tablet
+1175,Ahmed,Female,GROCERIES,Bananas,5,1500,,05-06-2025,Retail,East,,Bananas
+1176,Chen,Male,GROCERIES,Apples,2,,0,05-01-2025,Wholesale,,,Apples
+1177,Maria,,electronics,Laptop,2,499,,01-08-2025,Retail,West,,Laptop
+1178,Ahmed,Male, CLOTHING ,Jeans,5,499,15,01-28-2024,,South,,Jeans
+1179,Chen,Male,electronics,Tablet,1,,5,08-30-2024,Online,East,,Tablet
+1180,John,Male,Furniture,Chair,,1500,15,06-03-2024,,South,91-9988776655,Chair
+1181,Maria,,Furniture,Chair,4,,10,06-09-2024,Online,South,,Chair
+1182,Riya,Male,Furniture,Sofa,,999,,03-26-2024,Wholesale,North,91-9988776655,Sofa
+1183,John,,Furniture,Chair,,,0,03-26-2024,,North,-9876543119,Chair
+1184,Maria,Male,electronics,Laptop,,,5,09-27-2024,,,-9876543119,Laptop
+1185,Chen,Male,GROCERIES,Apples,1,199,5,05-03-2024,Wholesale,West,,Apples
+1186,Ahmed,,Electronics,Laptop,4,199,10,07-14-2024,Online,South,,Laptop
+1187,Ahmed,Male,Furniture,Chair,,499,0,03-28-2024,,North,,Chair
+1188,Asha,Male,Groceries,Bananas,5,199,,07-11-2024,,South,9876543210,Bananas
+1189,Emily,, CLOTHING ,Shirt,,999,0,04-20-2024,Retail,,9876543210,Shirt
+1190,Maria,Female,Furniture,Chair,,499,10,02-13-2025,Retail,,,Chair
+1191,Asha,Male,GROCERIES,Rice,3,199,15,10-21-2024,Retail,North,,Rice
+1192,Maria,, CLOTHING ,Jacket,,1500,15,01-29-2024,Wholesale,East,-9876543119,Jacket
+1193,Wei,Female,GROCERIES,Bananas,4,999,,02-14-2024,Retail,North,9876543210,Bananas
+1194,Ali,Female,GROCERIES,Apples,3,1500,0,07-18-2024,,East,-9876543119,Apples
+1195,Ahmed,Male,Furniture,Chair,5,,15,12-28-2024,,East,91-9988776655,Chair
+1196,Ahmed,Male,electronics,Mobile,4,,15,12-15-2024,,West,-9876543119,Mobile
+1197,Chen,, CLOTHING ,Jacket,,,,09-03-2024,Wholesale,East,9876543210,Jacket
+1198,John,,electronics,Tablet,,199,0,10-16-2024,Retail,East,-9876543119,Tablet
+1199,John,Male,GROCERIES,Bananas,,,5,11-20-2024,Retail,East,,Bananas
+1200,Emily,,Electronics,Tablet,1,499,5,05-15-2024,,East,,Tablet
+1201,Emily,,GROCERIES,Bananas,4,499,,01-11-2024,Retail,West,9876543210,Bananas
+1202,Asha,Male,Electronics,Tablet,3,,15,11-28-2024,,South,-9876543119,Tablet
+1203,Emily,Female,Groceries,Apples,1,199,,01-15-2024,Wholesale,West,,Apples
+1204,Sam,Female,electronics,Tablet,5,,0,09-11-2024,,West,91-9988776655,Tablet
+1205,John,Male,Groceries,Bananas,,1500,10,10-10-2024,Retail,West,9876543210,Bananas
+1206,Emily,Female,Furniture,Sofa,5,199,0,02-20-2024,,North,,Sofa
+1207,Chen,,GROCERIES,Apples,3,,,08-11-2024,Retail,South,-9876543119,Apples
+1208,John,Male, CLOTHING ,Jacket,5,499,,08-14-2024,,West,9876543210,Jacket
+1209,Ali,Female, CLOTHING ,Jeans,5,499,10,05-02-2024,Wholesale,North,9876543210,Jeans
+1210,Chen,Male,electronics,Laptop,,199,,06-05-2024,,West,9876543210,Laptop
+1211,Maria,Male,electronics,Mobile,1,499,0,04-02-2025,Retail,West,,Mobile
+1212,John,Male,Furniture,Chair,4,,,01-19-2025,Retail,,,Chair
+1213,Maria,Female,Groceries,Bananas,,999,15,11-30-2024,Retail,North,91-9988776655,Bananas
+1214,Emily,,Furniture,Sofa,,,5,01-07-2024,Retail,,,Sofa
+1215,Emily,Male, CLOTHING ,Jacket,3,199,10,04-05-2025,Retail,,-9876543119,Jacket
+1216,Emily,Male,Clothing,Jeans,,499,15,01-04-2024,Wholesale,West,-9876543119,Jeans
+1217,John,Male,Clothing,Jacket,,,10,03-26-2024,Wholesale,West,,Jacket
+1218,Riya,,GROCERIES,Bananas,5,499,0,04-12-2024,Online,East,-9876543119,Bananas
+1219,Asha,Female, CLOTHING ,Jeans,,1500,15,01-17-2025,Wholesale,East,91-9988776655,Jeans
+1220,Emily,Female,GROCERIES,Apples,,499,5,01-18-2025,Retail,South,-9876543119,Apples
+1221,Emily,Female,Furniture,Desk,,999,0,12-14-2024,Online,East,,Desk
+1222,Ahmed,,Groceries,Rice,3,,0,04-02-2024,,West,91-9988776655,Rice
+1223,Ahmed,,Electronics,Mobile,2,499,,02-27-2024,Wholesale,North,-9876543119,Mobile
+1224,John,,Furniture,Chair,5,499,0,05-28-2024,Online,,9876543210,Chair
+1225,Riya,Female, CLOTHING ,Jeans,1,,,03-17-2024,,West,,Jeans
+1226,Wei,Female,electronics,Tablet,,,,01-10-2025,Wholesale,South,,Tablet
+1227,Ahmed,Male,Groceries,Apples,,1500,,05-10-2025,,,,Apples
+1228,Riya,Female,GROCERIES,Bananas,1,1500,,08-10-2024,,South,,Bananas
+1229,Chen,Male,Groceries,Rice,3,499,,02-21-2025,Retail,South,,Rice
+1230,Sam,Female,electronics,Laptop,3,1500,15,07-31-2024,Online,South,91-9988776655,Laptop
+1231,Emily,,Electronics,Laptop,,999,5,09-14-2024,,East,,Laptop
+1232,Sam,Male,electronics,Mobile,2,,0,01-09-2024,Wholesale,North,,Mobile
+1233,John,Male,GROCERIES,Bananas,5,1500,15,03-09-2024,Wholesale,,9876543210,Bananas
+1234,Asha,Male,GROCERIES,Bananas,,999,,07-17-2024,Retail,West,9876543210,Bananas
+1235,John,Male, CLOTHING ,Jeans,2,,10,06-18-2024,Online,West,-9876543119,Jeans
+1236,Maria,,GROCERIES,Rice,2,1500,15,09-24-2024,Wholesale,South,91-9988776655,Rice
+1237,Ali,Female,electronics,Tablet,3,499,5,01-31-2024,Retail,East,-9876543119,Tablet
+1238,Chen,Male,Groceries,Rice,,199,,02-22-2025,Retail,West,-9876543119,Rice
+1239,Maria,Male,Groceries,Apples,4,,15,06-19-2024,Online,North,,Apples
+1240,Wei,,Furniture,Chair,1,1500,10,05-05-2024,Online,,,Chair
+1241,Sam,,Electronics,Tablet,5,999,0,01-12-2025,Retail,North,91-9988776655,Tablet
+1242,Ahmed,Female,Furniture,Chair,5,999,15,03-05-2024,Wholesale,West,,Chair
+1243,Sam,Male,Electronics,Laptop,,,,02-25-2025,Wholesale,,9876543210,Laptop
+1244,Ali,Female,Electronics,Laptop,,,,02-10-2025,,,91-9988776655,Laptop
+1245,Chen,,Groceries,Apples,4,1500,10,05-21-2024,,East,,Apples
+1246,John,Female, CLOTHING ,Jacket,3,,0,08-24-2024,Retail,North,,Jacket
+1247,John,Female,Clothing,Jacket,1,199,0,04-27-2025,Wholesale,,91-9988776655,Jacket
+1248,John,Male,Electronics,Laptop,5,199,15,06-12-2024,Online,South,91-9988776655,Laptop
+1249,Asha,,GROCERIES,Rice,5,199,10,11-24-2024,Retail,South,,Rice
+1250,John,Female,Furniture,Desk,,,15,04-01-2025,Online,North,9876543210,Desk
+1251,Riya,Male,Electronics,Laptop,2,999,,02-15-2025,Wholesale,,,Laptop
+1252,Asha,Male,GROCERIES,Bananas,,999,10,05-04-2025,Wholesale,North,-9876543119,Bananas
+1253,Emily,,GROCERIES,Bananas,3,499,0,05-17-2024,Retail,West,9876543210,Bananas
+1254,Riya,,Clothing,Jeans,3,1500,,01-01-2024,Wholesale,South,,Jeans
+1255,John,Male,Furniture,Desk,,999,,02-18-2024,Wholesale,South,91-9988776655,Desk
+1256,Wei,,Furniture,Desk,2,1500,5,03-09-2025,Online,,91-9988776655,Desk
+1257,Emily,Male,Groceries,Rice,5,199,,08-15-2024,,,-9876543119,Rice
+1258,Ahmed,Male,Clothing,Shirt,,999,15,03-23-2024,Online,North,,Shirt
+1259,Maria,Female, CLOTHING ,Jeans,4,999,15,07-05-2024,Wholesale,North,-9876543119,Jeans
+1260,Riya,Male, CLOTHING ,Jeans,3,199,5,01-07-2025,Online,South,,Jeans
+1261,Asha,Male,Electronics,Tablet,,1500,10,02-26-2025,Retail,East,,Tablet
+1262,Wei,,GROCERIES,Bananas,1,,0,05-07-2025,,North,,Bananas
+1263,Ahmed,Male,electronics,Laptop,5,199,,03-13-2025,Retail,South,,Laptop
+1264,Ahmed,Male, CLOTHING ,Jacket,5,,5,10-21-2024,,West,,Jacket
+1265,Sam,Female,Furniture,Sofa,,499,15,04-14-2024,Online,,91-9988776655,Sofa
+1266,John,,electronics,Tablet,3,1500,,06-16-2024,Retail,South,-9876543119,Tablet
+1267,Riya,Male,electronics,Laptop,1,199,5,12-28-2024,Wholesale,North,,Laptop
+1268,Asha,,Furniture,Chair,4,999,,06-16-2024,Retail,,,Chair
+1269,Emily,,Clothing,Jacket,1,499,,12-01-2024,,,,Jacket
+1270,Emily,,Clothing,Jeans,1,199,,04-18-2024,Online,,,Jeans
+1271,Emily,Female,electronics,Laptop,,499,15,04-09-2024,Retail,West,-9876543119,Laptop
+1272,Sam,Male,Groceries,Apples,3,1500,,05-15-2025,,North,9876543210,Apples
+1273,Chen,Female, CLOTHING ,Shirt,1,999,5,03-29-2024,Retail,North,,Shirt
+1274,John,,Furniture,Desk,2,1500,15,07-29-2024,Wholesale,West,91-9988776655,Desk
+1275,John,,GROCERIES,Apples,3,999,15,06-08-2024,Online,South,,Apples
+1276,Riya,Male,Groceries,Bananas,4,499,,12-23-2024,Retail,South,91-9988776655,Bananas
+1277,Asha,Male,Furniture,Chair,3,,0,01-20-2024,Retail,West,,Chair
+1278,Chen,,Electronics,Laptop,,499,10,06-28-2024,Online,North,,Laptop
+1279,Wei,Male,Groceries,Rice,2,,15,09-08-2024,Wholesale,East,,Rice
+1280,Wei,,GROCERIES,Apples,4,,10,10-11-2024,Wholesale,West,,Apples
+1281,Riya,Female,Electronics,Mobile,4,199,0,11-24-2024,Retail,West,-9876543119,Mobile
+1282,Sam,,Groceries,Apples,3,,,05-05-2024,,,,Apples
+1283,Sam,Male, CLOTHING ,Shirt,2,1500,0,03-07-2024,Online,South,,Shirt
+1284,Chen,Female,GROCERIES,Bananas,3,,10,09-26-2024,Wholesale,South,-9876543119,Bananas
+1285,Asha,Female,Clothing,Shirt,5,199,0,11-28-2024,Wholesale,West,,Shirt
+1286,Asha,,GROCERIES,Rice,4,499,0,04-17-2024,,,9876543210,Rice
+1287,John,,Electronics,Tablet,,999,,09-14-2024,Online,East,,Tablet
+1288,Emily,Male,Clothing,Jeans,5,499,0,09-09-2024,Retail,South,,Jeans
+1289,John,Male,Electronics,Mobile,2,499,5,04-25-2025,Online,,9876543210,Mobile
+1290,Asha,, CLOTHING ,Jacket,1,999,,03-23-2025,Retail,East,9876543210,Jacket
+1291,Maria,, CLOTHING ,Shirt,2,,0,06-09-2024,Online,East,91-9988776655,Shirt
+1292,Chen,Male,Groceries,Rice,,999,15,08-01-2024,Retail,East,9876543210,Rice
+1293,Ahmed,Male,Groceries,Apples,3,1500,10,01-28-2025,Wholesale,North,,Apples
+1294,Maria,Female,GROCERIES,Bananas,,,0,05-17-2024,Retail,,,Bananas
+1295,Sam,Female,Clothing,Jacket,,199,,04-03-2024,Online,West,,Jacket
+1296,Sam,Male,Electronics,Tablet,,999,5,03-12-2024,Wholesale,,,Tablet
+1297,Chen,Female,Groceries,Rice,5,499,5,04-18-2024,Online,North,,Rice
+1298,Asha,Male,Electronics,Mobile,5,499,,01-23-2024,Online,North,9876543210,Mobile
+1299,Riya,Male,electronics,Tablet,5,,15,11-07-2024,,West,,Tablet
+1300,Ahmed,Female,electronics,Tablet,3,199,,11-16-2024,Retail,East,-9876543119,Tablet
+1301,Ali,Male, CLOTHING ,Shirt,,999,,04-02-2025,Online,South,-9876543119,Shirt
+1302,Sam,Female,Clothing,Jacket,,1500,,02-03-2025,Wholesale,East,,Jacket
+1303,Emily,,electronics,Mobile,5,199,15,05-20-2024,Online,North,,Mobile
+1304,Riya,Male,GROCERIES,Apples,2,1500,,03-04-2025,,,-9876543119,Apples
+1305,John,Female,Clothing,Jacket,3,499,10,10-24-2024,Retail,East,9876543210,Jacket
+1306,Emily,,GROCERIES,Bananas,1,999,10,04-13-2025,Retail,East,91-9988776655,Bananas
+1307,Emily,Female,electronics,Mobile,1,999,10,03-05-2025,,East,9876543210,Mobile
+1308,Sam,Female,Electronics,Tablet,2,499,10,01-15-2025,,West,,Tablet
+1309,Riya,Female,Clothing,Shirt,5,199,,04-03-2025,Retail,East,-9876543119,Shirt
+1310,Asha,Male,Groceries,Apples,,1500,,05-04-2025,Retail,,9876543210,Apples
+1311,Wei,,electronics,Tablet,2,199,,09-21-2024,Retail,West,,Tablet
+1312,Ali,Male, CLOTHING ,Jeans,4,,,04-12-2025,,West,91-9988776655,Jeans
+1313,Ahmed,Female,Clothing,Jeans,,199,,11-15-2024,Online,North,-9876543119,Jeans
+1314,Chen,,GROCERIES,Apples,,,,05-14-2024,Retail,South,-9876543119,Apples
+1315,Asha,Female, CLOTHING ,Jacket,,499,0,11-03-2024,Online,East,91-9988776655,Jacket
+1316,Ahmed,Female,Furniture,Chair,1,1500,0,05-31-2024,Retail,South,91-9988776655,Chair
+1317,Ahmed,, CLOTHING ,Shirt,1,,,07-08-2024,Retail,East,,Shirt
+1318,Sam,Female,Electronics,Mobile,,1500,5,10-16-2024,Online,East,91-9988776655,Mobile
+1319,Riya,, CLOTHING ,Jacket,1,499,10,04-11-2025,,South,,Jacket
+1320,John,Male, CLOTHING ,Jacket,2,,,02-07-2024,Online,,,Jacket
+1321,Ali,, CLOTHING ,Jacket,,499,,04-30-2025,Online,North,,Jacket
+1322,Ahmed,Male,Electronics,Laptop,2,1500,,01-09-2025,,West,-9876543119,Laptop
+1323,Ali,,Clothing,Jeans,2,,,03-03-2025,Retail,West,,Jeans
+1324,Maria,,electronics,Tablet,5,199,15,08-02-2024,Wholesale,East,91-9988776655,Tablet
+1325,Maria,Male,GROCERIES,Apples,1,,0,12-22-2024,,East,,Apples
+1326,Sam,Female, CLOTHING ,Jeans,4,199,15,01-22-2024,Wholesale,North,-9876543119,Jeans
+1327,Ahmed,Female,electronics,Laptop,3,,15,03-30-2025,Retail,South,,Laptop
+1328,Emily,,Clothing,Shirt,2,,,10-22-2024,,East,91-9988776655,Shirt
+1329,Wei,Male,GROCERIES,Bananas,,199,0,08-05-2024,,North,91-9988776655,Bananas
+1330,Chen,Female,GROCERIES,Apples,1,499,10,11-15-2024,Wholesale,West,-9876543119,Apples
+1331,John,,Clothing,Jeans,,999,0,04-11-2024,Retail,East,9876543210,Jeans
+1332,Asha,,Electronics,Laptop,4,199,,08-13-2024,Online,South,,Laptop
+1333,Asha,Male, CLOTHING ,Jacket,,1500,15,07-28-2024,Wholesale,West,91-9988776655,Jacket
+1334,Ali,Female,Furniture,Chair,3,,10,01-11-2025,Retail,,,Chair
+1335,Chen,,electronics,Tablet,,,,07-09-2024,Retail,West,9876543210,Tablet
+1336,Ahmed,Female,Furniture,Sofa,4,1500,15,11-09-2024,,North,91-9988776655,Sofa
+1337,Sam,Female,GROCERIES,Apples,,,,12-25-2024,,West,,Apples
+1338,Ali,Male,Groceries,Apples,2,1500,5,05-22-2024,Online,South,9876543210,Apples
+1339,Sam,Female,Groceries,Rice,,1500,15,05-15-2025,Online,South,91-9988776655,Rice
+1340,Asha,Female,Furniture,Sofa,,,,03-20-2024,Retail,,,Sofa
+1341,Ahmed,,Clothing,Jeans,5,1500,15,05-21-2024,Wholesale,East,,Jeans
+1342,Riya,Female,GROCERIES,Apples,1,999,,01-30-2024,,North,,Apples
+1343,Wei,Female,electronics,Laptop,4,,,09-20-2024,,South,,Laptop
+1344,Emily,,Furniture,Sofa,1,1500,10,08-06-2024,Wholesale,West,-9876543119,Sofa
+1345,Riya,Female,electronics,Mobile,3,499,,11-07-2024,,West,91-9988776655,Mobile
+1346,Wei,,GROCERIES,Bananas,,,5,01-18-2024,,North,9876543210,Bananas
+1347,Emily,Male,electronics,Tablet,4,499,15,03-29-2025,Wholesale,West,9876543210,Tablet
+1348,Riya,Female,Groceries,Bananas,,1500,,04-11-2025,Wholesale,East,-9876543119,Bananas
+1349,Emily,Male,Clothing,Jacket,4,,15,02-24-2025,Retail,East,9876543210,Jacket
+1350,Chen,Male,GROCERIES,Rice,,1500,,05-11-2024,Online,South,,Rice
+1351,Ahmed,Female,Furniture,Chair,5,1500,10,04-02-2025,Wholesale,North,,Chair
+1352,Sam,,Furniture,Chair,5,1500,0,03-29-2025,Wholesale,West,91-9988776655,Chair
+1353,Ali,Female,Electronics,Tablet,,199,10,03-07-2024,Wholesale,North,-9876543119,Tablet
+1354,John,Female,Groceries,Apples,3,1500,,02-01-2024,Online,West,91-9988776655,Apples
+1355,Emily,Female, CLOTHING ,Jacket,,499,0,09-30-2024,,North,91-9988776655,Jacket
+1356,Emily,,electronics,Laptop,,,5,01-08-2025,Wholesale,West,,Laptop
+1357,Chen,Male,Groceries,Apples,4,,,02-09-2024,Online,North,,Apples
+1358,Maria,Male,Groceries,Bananas,2,199,10,11-12-2024,,North,-9876543119,Bananas
+1359,Ahmed,Male,Electronics,Laptop,1,199,15,02-21-2025,Retail,West,91-9988776655,Laptop
+1360,Sam,,Groceries,Apples,,499,5,01-19-2025,Online,,-9876543119,Apples
+1361,Emily,,Furniture,Desk,4,1500,,04-29-2025,Online,East,9876543210,Desk
+1362,Emily,Female,GROCERIES,Apples,,1500,,02-03-2024,,East,-9876543119,Apples
+1363,Emily,Female,electronics,Laptop,2,1500,10,06-04-2024,Online,,91-9988776655,Laptop
+1364,Wei,Female, CLOTHING ,Jeans,2,1500,15,03-12-2024,Retail,North,91-9988776655,Jeans
+1365,Wei,Female,GROCERIES,Rice,2,,10,02-26-2024,Wholesale,South,-9876543119,Rice
+1366,Wei,Female,Electronics,Laptop,3,,10,03-30-2024,Online,North,,Laptop
+1367,Sam,Female,Clothing,Jeans,5,,10,10-06-2024,,West,9876543210,Jeans
+1368,Ali,Male,Groceries,Apples,,499,5,11-28-2024,Wholesale,West,91-9988776655,Apples
+1369,Emily,,Groceries,Rice,4,,,08-28-2024,Retail,East,-9876543119,Rice
+1370,Riya,,Clothing,Jacket,,,,05-25-2024,Retail,East,,Jacket
+1371,Emily,Female,electronics,Tablet,,,,05-12-2025,Wholesale,South,9876543210,Tablet
+1372,Emily,Male, CLOTHING ,Shirt,4,1500,0,12-14-2024,Online,North,9876543210,Shirt
+1373,Chen,Male,Groceries,Apples,1,499,,03-21-2024,,,-9876543119,Apples
+1374,Ali,,electronics,Laptop,5,,,10-15-2024,Retail,South,9876543210,Laptop
+1375,Asha,Male,Furniture,Sofa,2,,,11-12-2024,Online,West,,Sofa
+1376,Asha,Male,Furniture,Sofa,2,999,0,02-20-2025,Online,West,91-9988776655,Sofa
+1377,Riya,,GROCERIES,Apples,5,999,,02-05-2024,,,,Apples
+1378,Sam,Male,Clothing,Shirt,5,,5,03-12-2025,,,,Shirt
+1379,Chen,Female,Groceries,Apples,5,499,10,05-14-2025,Retail,West,,Apples
+1380,Maria,Male,electronics,Mobile,4,999,,03-15-2025,Retail,West,,Mobile
+1381,Emily,Female,Furniture,Sofa,1,199,,05-04-2024,Wholesale,South,-9876543119,Sofa
+1382,Asha,Male,Clothing,Jeans,,1500,,02-07-2025,Online,,-9876543119,Jeans
+1383,Wei,,electronics,Tablet,3,,15,03-15-2025,Wholesale,West,9876543210,Tablet
+1384,Wei,Male,Furniture,Chair,2,499,0,11-29-2024,Retail,East,91-9988776655,Chair
+1385,Riya,,electronics,Mobile,3,1500,5,06-08-2024,Wholesale,,-9876543119,Mobile
+1386,Ali,,Electronics,Tablet,,,15,08-09-2024,,,9876543210,Tablet
+1387,Maria,Male,electronics,Laptop,3,,0,11-10-2024,Online,South,9876543210,Laptop
+1388,Chen,,Furniture,Chair,3,1500,10,02-10-2025,Wholesale,,,Chair
+1389,Maria,Female,electronics,Tablet,2,499,0,10-08-2024,Retail,,9876543210,Tablet
+1390,Asha,,Electronics,Tablet,4,,,01-09-2025,Wholesale,North,,Tablet
+1391,Sam,,Groceries,Bananas,2,999,0,01-14-2025,Online,West,9876543210,Bananas
+1392,Sam,Male,electronics,Mobile,1,999,,02-19-2025,Wholesale,West,9876543210,Mobile
+1393,Sam,Female,Electronics,Mobile,3,499,,04-28-2024,Retail,South,,Mobile
+1394,John,, CLOTHING ,Jeans,,,10,05-12-2024,,East,,Jeans
+1395,Maria,Female,Electronics,Tablet,3,1500,5,02-17-2025,Wholesale,,91-9988776655,Tablet
+1396,John,,Furniture,Sofa,1,199,0,05-12-2024,Retail,West,,Sofa
+1397,Asha,Female,Furniture,Desk,,,,01-10-2025,Online,,-9876543119,Desk
+1398,Sam,Female,GROCERIES,Bananas,,1500,,01-31-2024,Wholesale,South,91-9988776655,Bananas
+1399,Ali,Female,Electronics,Laptop,4,199,,11-13-2024,Wholesale,North,,Laptop
+1400,John,Male,Electronics,Tablet,3,199,10,08-14-2024,Wholesale,East,9876543210,Tablet
+1401,Wei,Male,Electronics,Tablet,4,1500,,11-18-2024,Wholesale,East,91-9988776655,Tablet
+1402,John,Male,GROCERIES,Rice,,1500,15,02-07-2025,Online,West,,Rice
+1403,Emily,Female,GROCERIES,Apples,,1500,5,03-29-2025,,,9876543210,Apples
+1404,Chen,Male,Groceries,Rice,1,999,10,04-27-2024,Wholesale,West,,Rice
+1405,Riya,,Clothing,Jeans,1,999,10,06-10-2024,,East,-9876543119,Jeans
+1406,Riya,,electronics,Laptop,2,,5,11-04-2024,,South,-9876543119,Laptop
+1407,Riya,, CLOTHING ,Shirt,5,,10,02-18-2024,Wholesale,South,91-9988776655,Shirt
+1408,Ali,,electronics,Tablet,4,199,15,08-31-2024,Online,North,-9876543119,Tablet
+1409,Sam,Female,electronics,Laptop,1,1500,,03-23-2024,Online,East,-9876543119,Laptop
+1410,John,Male, CLOTHING ,Jacket,,,,07-23-2024,Wholesale,,91-9988776655,Jacket
+1411,Ahmed,Female, CLOTHING ,Jeans,3,,0,02-27-2025,Wholesale,South,9876543210,Jeans
+1412,Ahmed,Female,Clothing,Jacket,1,999,,01-17-2025,,South,9876543210,Jacket
+1413,Riya,,Furniture,Chair,2,199,5,01-24-2025,Retail,North,,Chair
+1414,Ali,,GROCERIES,Bananas,4,499,15,01-12-2025,Wholesale,East,-9876543119,Bananas
+1415,John,Female,Clothing,Shirt,2,,,02-07-2025,Retail,South,91-9988776655,Shirt
+1416,Sam,Female,Groceries,Bananas,5,,10,09-03-2024,Retail,East,91-9988776655,Bananas
+1417,Maria,Male,GROCERIES,Rice,2,1500,,05-22-2024,Retail,North,,Rice
+1418,Sam,Female, CLOTHING ,Jeans,1,499,10,01-15-2025,Retail,South,91-9988776655,Jeans
+1419,Chen,,Groceries,Apples,3,,10,02-17-2024,Retail,North,,Apples
+1420,Emily,Male,Electronics,Laptop,2,499,0,06-15-2024,Wholesale,West,9876543210,Laptop
+1421,Chen,Male,Electronics,Laptop,2,,,02-14-2025,Wholesale,North,-9876543119,Laptop
+1422,Emily,Female,GROCERIES,Bananas,4,,0,09-15-2024,Online,East,9876543210,Bananas
+1423,Ahmed,,electronics,Mobile,,,15,08-02-2024,Wholesale,South,-9876543119,Mobile
+1424,John,Female,Clothing,Shirt,3,1500,5,03-18-2024,Retail,East,9876543210,Shirt
+1425,Sam,,GROCERIES,Rice,5,,0,06-26-2024,Retail,North,9876543210,Rice
+1426,Emily,Male,Furniture,Desk,5,,,10-28-2024,Online,South,-9876543119,Desk
+1427,Ahmed,Male,Groceries,Rice,,,,02-27-2025,Online,East,,Rice
+1428,Wei,Male, CLOTHING ,Shirt,3,,,02-21-2025,Online,East,,Shirt
+1429,John,Female,GROCERIES,Apples,,499,0,05-21-2024,,,91-9988776655,Apples
+1430,John,Male,Groceries,Rice,2,1500,,02-27-2024,Retail,West,,Rice
+1431,Asha,Male,GROCERIES,Rice,2,,10,02-06-2025,Online,South,,Rice
+1432,Maria,Male,Groceries,Apples,,199,,03-04-2025,,,9876543210,Apples
+1433,Chen,Male,Electronics,Tablet,5,,5,09-01-2024,Wholesale,West,9876543210,Tablet
+1434,Ahmed,Female,Groceries,Rice,,999,,01-09-2024,Online,West,91-9988776655,Rice
+1435,Ahmed,,Groceries,Rice,1,999,0,12-01-2024,Online,,,Rice
+1436,Ali,Male,Electronics,Mobile,,199,,02-08-2025,Retail,,91-9988776655,Mobile
+1437,Chen,Male,electronics,Laptop,3,999,0,07-06-2024,Retail,,91-9988776655,Laptop
+1438,John,Male,Groceries,Bananas,5,499,0,02-11-2024,Wholesale,North,-9876543119,Bananas
+1439,Sam,,Furniture,Desk,1,999,10,05-15-2024,,North,-9876543119,Desk
+1440,Maria,,electronics,Tablet,,,5,08-12-2024,Online,,91-9988776655,Tablet
+1441,Ali,,Furniture,Chair,,199,0,03-13-2025,Retail,South,91-9988776655,Chair
+1442,Sam,Male,GROCERIES,Rice,,199,5,04-30-2025,Wholesale,,91-9988776655,Rice
+1443,Maria,Female,Clothing,Shirt,2,,15,01-19-2024,Online,,,Shirt
+1444,Ali,Female,Groceries,Bananas,4,,,10-25-2024,Wholesale,,,Bananas
+1445,Asha,Female, CLOTHING ,Shirt,2,499,10,02-05-2025,Online,,-9876543119,Shirt
+1446,Emily,,Furniture,Desk,3,499,,12-18-2024,,,,Desk
+1447,Chen,Female,GROCERIES,Rice,1,,5,01-12-2025,,West,-9876543119,Rice
+1448,Ali,,Electronics,Mobile,2,,,08-15-2024,Wholesale,,,Mobile
+1449,Chen,,Groceries,Rice,4,499,,05-17-2024,,North,9876543210,Rice
+1450,Wei,Male,Clothing,Jacket,4,,,05-15-2025,Wholesale,East,91-9988776655,Jacket
+1451,Maria,Female,Furniture,Desk,5,499,0,03-09-2024,Retail,North,-9876543119,Desk
+1452,Asha,, CLOTHING ,Jeans,3,999,5,04-28-2025,Retail,East,,Jeans
+1453,Wei,,GROCERIES,Rice,1,199,,07-27-2024,Retail,East,,Rice
+1454,John,Female,Furniture,Desk,5,,,11-01-2024,,West,,Desk
+1455,Asha,Male,Clothing,Jeans,4,,10,01-30-2025,Online,East,91-9988776655,Jeans
+1456,Emily,,Groceries,Bananas,3,999,5,03-07-2024,Retail,,9876543210,Bananas
+1457,Chen,,GROCERIES,Rice,3,1500,,06-12-2024,Wholesale,South,,Rice
+1458,Riya,,electronics,Tablet,5,1500,,05-01-2024,Online,East,,Tablet
+1459,Emily,,GROCERIES,Bananas,3,499,5,04-09-2024,Wholesale,East,,Bananas
+1460,Ali,Female,Electronics,Laptop,,1500,10,09-24-2024,Retail,North,,Laptop
+1461,Maria,Female,Clothing,Jacket,,499,,03-12-2025,,North,,Jacket
+1462,Asha,,GROCERIES,Rice,4,1500,15,09-25-2024,Online,East,9876543210,Rice
+1463,Riya,, CLOTHING ,Jeans,,,,03-10-2025,,East,91-9988776655,Jeans
+1464,John,Male,Electronics,Mobile,,999,,05-13-2024,,North,,Mobile
+1465,Emily,, CLOTHING ,Jeans,,,5,01-22-2024,,,9876543210,Jeans
+1466,Sam,, CLOTHING ,Jeans,5,199,,04-03-2024,Retail,West,9876543210,Jeans
+1467,Emily,Male,GROCERIES,Apples,1,,0,04-28-2025,Retail,North,,Apples
+1468,Chen,Male,GROCERIES,Apples,2,499,,11-30-2024,,North,-9876543119,Apples
+1469,Emily,,GROCERIES,Bananas,3,999,5,02-18-2024,Wholesale,West,,Bananas
+1470,Asha,,Clothing,Shirt,,,,07-08-2024,,South,,Shirt
+1471,John,,electronics,Mobile,,1500,0,10-19-2024,Retail,,,Mobile
+1472,Emily,Male,Electronics,Laptop,5,199,,03-23-2024,Retail,North,,Laptop
+1473,Chen,Female,Clothing,Shirt,4,199,,01-16-2025,Retail,,91-9988776655,Shirt
+1474,Ahmed,Female,Electronics,Tablet,1,999,15,12-26-2024,Online,North,9876543210,Tablet
+1475,Wei,Male,Electronics,Mobile,4,,15,04-29-2025,,South,91-9988776655,Mobile
+1476,Sam,Male,Groceries,Apples,4,999,5,02-25-2024,Online,West,,Apples
+1477,Wei,, CLOTHING ,Jacket,3,499,15,03-01-2024,,North,,Jacket
+1478,Asha,Female,Electronics,Mobile,5,1500,10,05-11-2025,Online,East,,Mobile
+1479,Riya,Female,GROCERIES,Bananas,,499,15,05-07-2024,Wholesale,East,91-9988776655,Bananas
+1480,Wei,,Clothing,Shirt,5,499,,08-05-2024,Wholesale,East,-9876543119,Shirt
+1481,Riya,Female, CLOTHING ,Shirt,3,,0,09-10-2024,,East,9876543210,Shirt
+1482,John,Male,electronics,Tablet,4,,10,04-06-2024,,West,91-9988776655,Tablet
+1483,John,Male,Clothing,Jacket,3,499,10,07-06-2024,Retail,North,,Jacket
+1484,Wei,Female, CLOTHING ,Shirt,,499,0,02-24-2025,Wholesale,North,91-9988776655,Shirt
+1485,Asha,Female,Electronics,Tablet,,999,10,06-30-2024,Wholesale,East,,Tablet
+1486,Riya,Male,electronics,Laptop,,199,15,10-29-2024,Online,West,91-9988776655,Laptop
+1487,Sam,,Groceries,Rice,3,,5,12-06-2024,Online,East,,Rice
+1488,Wei,Male,Groceries,Rice,5,499,15,12-07-2024,,South,91-9988776655,Rice
+1489,Ahmed,Female, CLOTHING ,Jeans,,499,,04-21-2025,,West,91-9988776655,Jeans
+1490,John,,electronics,Tablet,1,1500,0,10-21-2024,Online,West,91-9988776655,Tablet
+1491,Ahmed,Female, CLOTHING ,Shirt,4,199,,02-21-2024,Wholesale,,91-9988776655,Shirt
+1492,Chen,,electronics,Laptop,5,1500,10,11-10-2024,Online,,9876543210,Laptop
+1493,Maria,Male,Furniture,Sofa,1,,,07-25-2024,,South,91-9988776655,Sofa
+1494,Ali,,Clothing,Jeans,2,,0,12-16-2024,Wholesale,North,,Jeans
+1495,Asha,,Electronics,Tablet,,1500,5,10-06-2024,Wholesale,South,91-9988776655,Tablet
+1496,Chen,Male,Groceries,Rice,4,499,10,02-27-2024,Wholesale,South,,Rice
+1497,Riya,Male,Furniture,Desk,2,,10,12-09-2024,Wholesale,,,Desk
+1498,Maria,,electronics,Laptop,,,,01-31-2025,Online,West,,Laptop
+1499,Wei,,electronics,Tablet,,,0,09-11-2024,Online,,91-9988776655,Tablet
