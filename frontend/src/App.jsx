@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react
 import axios from 'axios';
 import { LayoutDashboard, Package, TrendingUp, ShoppingCart, Activity, PlusSquare } from 'lucide-react';
 
-const API = 'http://localhost:5000/api';
+const API = 'https://inventory-ai-agent-w2vb.onrender.com';
 
 const Sidebar = ({ logs }) => (
   <div className="w-64 bg-gray-900 text-white min-h-screen p-4 flex flex-col">
