@@ -44,7 +44,7 @@ const Inventory = ({ products, addLog }) => {
   const handleAnalyze = async () => {
     addLog('Analyzing inventory & sales history...');
     try {
-      await axios.post(`${API}/forecast`);
+      await axios.post(`${API}/api/forecast`); // ADDED /api
       addLog('Generated new demand forecasts.');
       alert('Analysis complete! Check the Forecast tab.');
     } catch (e) { alert('Forecast failed. Is the Python ML service running on port 8000?'); }
@@ -92,7 +92,7 @@ const ForecastPage = ({ addLog }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`${API}/forecasts`).then(res => {
+    axios.get(`${API}/api/forecasts`).then(res => { // ADDED /api
       setForecasts(res.data);
       const initialDraft = {};
       res.data.forEach(f => { if(f.recommendedOrder > 0) initialDraft[f.productId] = f.recommendedOrder; });
@@ -109,7 +109,7 @@ const ForecastPage = ({ addLog }) => {
     if(items.length === 0) return alert('Order is empty');
     
     try {
-      const res = await axios.post(`${API}/orders`, { items });
+      const res = await axios.post(`${API}/api/orders`, { items }); // ADDED /api
       res.data.orders.forEach(o => addLog(`Generated PO: ${o.orderId} for ${o.supplier}`));
       addLog('Simulated supplier order sent.');
       alert('Orders submitted successfully!');
@@ -150,11 +150,11 @@ const ForecastPage = ({ addLog }) => {
 const OrdersPage = () => {
   const [orders, setOrders] = useState([]);
   
-  const fetchOrders = () => axios.get(`${API}/orders`).then(res => setOrders(res.data));
+  const fetchOrders = () => axios.get(`${API}/api/orders`).then(res => setOrders(res.data)); // ADDED /api
   useEffect(() => { fetchOrders(); }, []);
 
   const markReceived = async (id) => {
-    await axios.post(`${API}/orders/${id}/receive`);
+    await axios.post(`${API}/api/orders/${id}/receive`); // ADDED /api
     fetchOrders();
     alert('Inventory updated!');
   };
@@ -187,7 +187,7 @@ const RecordSale = ({ products, fetchProducts, addLog }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${API}/sales`, form);
+      await axios.post(`${API}/api/sales`, form); // ADDED /api
       addLog(`Recorded sale: ${form.quantity} unit(s) of ${products.find(p=>p.productId===form.productId)?.productName}`);
       fetchProducts();
       alert('Sale recorded successfully!');
@@ -220,7 +220,7 @@ export default function App() {
   const [logs, setLogs] = useState(['Agent initialized. Ready to assist.']);
 
   const addLog = (msg) => setLogs(prev => [msg, ...prev].slice(0, 10));
-  const fetchProducts = () => axios.get(`${API}/products`).then(res => setProducts(res.data));
+  const fetchProducts = () => axios.get(`${API}/api/products`).then(res => setProducts(res.data)); // ADDED /api
 
   useEffect(() => { fetchProducts(); }, []);
 
