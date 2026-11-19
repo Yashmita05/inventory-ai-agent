@@ -1,81 +1,242 @@
+// src/App.jsx
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, NavLink, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { LayoutDashboard, Package, TrendingUp, ShoppingCart, Activity, PlusSquare } from 'lucide-react';
+import AIBox from './AIBox.jsx';
 
-const API = 'https://inventory-ai-agent-w2vb.onrender.com';
+// API base URL
+const API = import.meta.env.VITE_API_URL || 'https://inventory-ai-agent-w2vb.onrender.com';
 
-const Sidebar = ({ logs }) => (
-  <div className="w-64 bg-gray-900 text-white min-h-screen p-4 flex flex-col">
-    <h1 className="text-2xl font-bold mb-8 text-blue-400">InventoryAI</h1>
-    <nav className="flex-1 space-y-2">
-      <Link to="/" className="flex items-center gap-2 p-2 hover:bg-gray-800 rounded"><LayoutDashboard size={18}/> Dashboard</Link>
-      <Link to="/inventory" className="flex items-center gap-2 p-2 hover:bg-gray-800 rounded"><Package size={18}/> Inventory</Link>
-      <Link to="/forecast" className="flex items-center gap-2 p-2 hover:bg-gray-800 rounded"><TrendingUp size={18}/> Forecast</Link>
-      <Link to="/orders" className="flex items-center gap-2 p-2 hover:bg-gray-800 rounded"><ShoppingCart size={18}/> Orders</Link>
-      <Link to="/record-sale" className="flex items-center gap-2 p-2 hover:bg-gray-800 rounded"><PlusSquare size={18}/> Record Sale</Link>
-    </nav>
-    <div className="mt-auto bg-gray-800 p-3 rounded-lg">
-      <h3 className="text-sm font-bold flex items-center gap-2 mb-2"><Activity size={16}/> AI Agent Logs</h3>
-      <div className="text-xs space-y-2 h-32 overflow-y-auto">
-        {logs.map((log, i) => <div key={i}>🤖 {log}</div>)}
+// Header component – full width top bar
+const Header = () => {
+  const navigate = useNavigate();
+  return (
+    <header className="flex items-center justify-between px-7 py-3.5 bg-white border-b border-[#E8EAF3] shadow-xs">
+      <div className="flex items-center space-x-3 cursor-pointer" onClick={() => navigate('/')}>
+        <div className="w-10 h-10 rounded-xl bg-[#5B5CE6] flex items-center justify-center text-white shadow-xs">
+          <LayoutDashboard size={20} />
+        </div>
+        <div className="flex flex-col text-left">
+          <h1 className="text-base font-bold text-gray-900 leading-tight">SmartStock AI</h1>
+          <p className="text-xs text-gray-500">Intelligent Inventory &amp; Forecasting</p>
+        </div>
+      </div>
+      <button
+        onClick={() => navigate('/ai-agent')}
+        className="px-5 py-2 rounded-full bg-[#5B5CE6] text-white text-sm font-medium hover:bg-[#4d4ecb] transition-all cursor-pointer shadow-sm hover:translate-y-[-1px]"
+        style={{ transitionTimingFunction: 'cubic-bezier(0.34, 1.56, 0.64, 1)' }}
+      >
+        Ask AI
+      </button>
+    </header>
+  );
+};
+
+// Left sidebar – workspace identity + navigation menu
+const Sidebar = () => {
+  const menu = [
+    { to: '/', label: 'Dashboard', subtitle: 'Your overview', icon: <LayoutDashboard size={18} /> },
+    { to: '/inventory', label: 'Inventory', subtitle: 'Live stock levels', icon: <Package size={18} /> },
+    { to: '/forecast', label: 'Forecast', subtitle: '7‑day demand plan', icon: <TrendingUp size={18} /> },
+    { to: '/orders', label: 'Orders', subtitle: 'Purchase orders', icon: <ShoppingCart size={18} /> },
+    { to: '/record-sale', label: 'Record Sale', subtitle: 'Log a transaction', icon: <PlusSquare size={18} /> },
+  ];
+
+  return (
+    <aside className="flex flex-col space-y-4">
+      {/* Workspace identity card */}
+      <div className="bg-white rounded-3xl p-4 border border-[#E8EAF3] shadow-sm">
+        <h2 className="text-xs font-semibold tracking-wider text-gray-400 uppercase">WORKSPACE</h2>
+        <p className="mt-1 text-base font-bold text-gray-800">SmartStock AI</p>
+      </div>
+      {/* Navigation menu */}
+      <nav className="flex flex-col space-y-2">
+        {menu.map(item => (
+          <NavLink
+            key={item.to}
+            to={item.to}
+            end
+            className={({ isActive }) =>
+              `flex items-center space-x-3 p-3 rounded-2xl transition-all duration-200 ${
+                isActive
+                  ? 'bg-white border border-[#E8EAF3] shadow-sm text-gray-900'
+                  : 'bg-white/50 text-gray-600 hover:bg-white hover:text-gray-900'
+              }`
+            }
+          >
+            <div className="w-8 h-8 rounded-lg bg-indigo-50 text-[#5B5CE6] flex items-center justify-center shrink-0">
+              {item.icon}
+            </div>
+            <div className="flex flex-col text-left">
+              <span className="text-sm font-semibold leading-tight">{item.label}</span>
+              <span className="text-xs text-gray-400">{item.subtitle}</span>
+            </div>
+          </NavLink>
+        ))}
+      </nav>
+    </aside>
+  );
+};
+
+// Right workspace panel – always docked, never overlaps centre
+const RightPanel = ({ products = [] }) => {
+  const navigate = useNavigate();
+  const totalProducts = products.length;
+  const lowStock = products.filter(p => p.currentStock <= p.safetyStock).length;
+  const categories = ['Clothing', 'Groceries', 'Furniture', 'Electronics'];
+
+  return (
+    <section className="flex flex-col space-y-4">
+      {/* Header */}
+      <div className="bg-white rounded-3xl p-4 border border-[#E8EAF3] shadow-sm flex items-center justify-between">
+        <div className="flex items-center space-x-2">
+          <LayoutDashboard size={18} className="text-[#5B5CE6]" />
+          <h2 className="text-xs font-semibold tracking-wider text-gray-400 uppercase">YOUR WORKSPACE</h2>
+        </div>
+        <span className="text-xs font-medium text-gray-600">SmartStock AI</span>
+      </div>
+      {/* Summary numbers */}
+      <div className="grid grid-cols-2 gap-3">
+        <div className="bg-white rounded-3xl p-4 text-center border border-[#E8EAF3] shadow-sm">
+          <p className="text-xs font-medium text-gray-400">Total Products</p>
+          <p className="text-2xl font-bold text-gray-800 mt-1">{totalProducts}</p>
+        </div>
+        <div className="bg-white rounded-3xl p-4 text-center border border-[#E8EAF3] shadow-sm">
+          <p className="text-xs font-medium text-gray-400">Low Stock Alerts</p>
+          <p className="text-2xl font-bold text-rose-500 mt-1">{lowStock}</p>
+        </div>
+      </div>
+      {/* Category pills */}
+      <div className="grid grid-cols-2 gap-2">
+        {categories.map(cat => {
+          const count = products.filter(p => p.category === cat).length;
+          return (
+            <span key={cat} className="inline-block bg-indigo-50 text-[#5B5CE6] text-xs font-medium py-1.5 px-3 rounded-full text-center border border-indigo-100/60">
+              {cat} {count > 0 && `(${count})`}
+            </span>
+          );
+        })}
+      </div>
+      {/* Bottom info box */}
+      <div className="bg-white rounded-3xl p-5 border border-[#E8EAF3] shadow-sm text-xs text-gray-600 space-y-2">
+        <p className="font-semibold text-gray-800">Predict • Review • Act</p>
+        <p className="text-gray-500 leading-relaxed">
+          Use the AI Agent to analyze low‑stock items, generate forecasts, and create supplier purchase orders.
+        </p>
+        <button
+          onClick={() => navigate('/ai-agent')}
+          className="w-full mt-2 py-2 rounded-full bg-[#F4F5FB] hover:bg-indigo-50 text-[#5B5CE6] font-semibold border border-[#E8EAF3] transition-colors cursor-pointer text-center"
+        >
+          Open AI Agent
+        </button>
+      </div>
+    </section>
+  );
+};
+
+// --- Page components ---
+const Dashboard = ({ products = [] }) => {
+  const navigate = useNavigate();
+  return (
+    <div className="space-y-6">
+      {/* Hero card */}
+      <div className="bg-white rounded-3xl p-7 border border-[#E8EAF3] shadow-sm flex items-center justify-between">
+        <div className="space-y-2 max-w-lg">
+          <h2 className="text-2xl font-bold text-gray-800">Hi, Manager</h2>
+          <p className="text-sm text-gray-500">Intelligent Inventory &amp; Demand Forecasting Dashboard</p>
+          <div className="pt-2">
+            <div className="inline-flex items-center gap-3 bg-[#F4F5FB] p-3 rounded-2xl border border-[#E8EAF3]">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span className="text-xs font-medium text-gray-600">Your inventory agent is ready to assist.</span>
+              <button
+                onClick={() => navigate('/ai-agent')}
+                className="px-4 py-1.5 rounded-full bg-[#5B5CE6] text-white text-xs font-medium hover:bg-[#4d4ecb] transition-all cursor-pointer shadow-sm hover:translate-y-[-1px]"
+                style={{ transitionTimingFunction: 'cubic-bezier(0.34, 1.56, 0.64, 1)' }}
+              >
+                Open chat
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className="hidden sm:flex w-16 h-16 rounded-2xl bg-indigo-50 text-[#5B5CE6] items-center justify-center">
+          <Activity size={32} />
+        </div>
+      </div>
+
+      {/* Overview cards */}
+      <div className="grid grid-cols-2 gap-4">
+        <div className="bg-white rounded-3xl p-6 border border-[#E8EAF3] shadow-sm">
+          <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">Total Products</p>
+          <p className="text-3xl font-bold text-gray-800 mt-2">{products.length}</p>
+        </div>
+        <div className="bg-white rounded-3xl p-6 border border-[#E8EAF3] shadow-sm">
+          <p className="text-xs font-semibold uppercase tracking-wider text-gray-400">Low Stock Alerts</p>
+          <p className="text-3xl font-bold text-rose-500 mt-2">{products.filter(p => p.currentStock <= p.safetyStock).length}</p>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
-const Dashboard = ({ products }) => (
-  <div className="p-6">
-    <h2 className="text-2xl font-bold mb-6">Dashboard</h2>
-    <div className="grid grid-cols-2 gap-6 mb-8">
-      <div className="bg-white p-6 rounded-lg shadow border-t-4 border-blue-500">
-        <h3 className="text-gray-500">Total Products</h3>
-        <p className="text-3xl font-bold">{products.length}</p>
-      </div>
-      <div className="bg-white p-6 rounded-lg shadow border-t-4 border-red-500">
-        <h3 className="text-gray-500">Low Stock Alerts</h3>
-        <p className="text-3xl font-bold text-red-500">{products.filter(p => p.currentStock <= p.safetyStock).length}</p>
-      </div>
-    </div>
-  </div>
-);
+const Inventory = ({ products = [], fetchProducts, addLog }) => {
+  const [analyzing, setAnalyzing] = useState(false);
 
-const Inventory = ({ products, addLog }) => {
   const handleAnalyze = async () => {
+    setAnalyzing(true);
     addLog('Analyzing inventory & sales history...');
     try {
-      await axios.post(`${API}/api/forecast`); // ADDED /api
+      await axios.post(`${API}/api/forecast`);
       addLog('Generated new demand forecasts.');
+      if (fetchProducts) fetchProducts();
       alert('Analysis complete! Check the Forecast tab.');
-    } catch (e) { alert('Forecast failed. Is the Python ML service running on port 8000?'); }
+    } catch (e) {
+      alert('Forecast failed. Is the Python ML service running on port 8000?');
+    } finally {
+      setAnalyzing(false);
+    }
   };
 
   return (
-    <div className="p-6">
-      <div className="flex justify-between mb-6">
-        <h2 className="text-2xl font-bold">Inventory Status</h2>
-        <button onClick={handleAnalyze} className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 font-bold shadow">
-          ANALYZE INVENTORY
+    <div className="space-y-4">
+      <div className="flex items-center justify-between">
+        <div>
+          <h2 className="text-2xl font-bold text-gray-800">Inventory Status</h2>
+          <p className="text-xs text-gray-500">Real-time stock levels across categories</p>
+        </div>
+        <button
+          onClick={handleAnalyze}
+          disabled={analyzing}
+          className="px-5 py-2.5 rounded-full bg-[#5B5CE6] text-white text-sm font-medium hover:bg-[#4d4ecb] transition-all cursor-pointer shadow-sm hover:translate-y-[-1px] disabled:opacity-50"
+          style={{ transitionTimingFunction: 'cubic-bezier(0.34, 1.56, 0.64, 1)' }}
+        >
+          {analyzing ? 'Analyzing...' : 'Analyze Inventory'}
         </button>
       </div>
-      <div className="bg-white rounded-lg shadow overflow-hidden">
+      <div className="bg-white rounded-3xl shadow-sm overflow-hidden border border-[#E8EAF3]">
         <table className="w-full text-left">
-          <thead className="bg-gray-100">
+          <thead className="bg-[#F8F9FD] border-b border-[#E8EAF3]">
             <tr>
-              <th className="p-4">Product</th><th className="p-4">Category</th>
-              <th className="p-4">Stock</th><th className="p-4">Status</th>
+              <th className="p-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Product</th>
+              <th className="p-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Category</th>
+              <th className="p-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Stock</th>
+              <th className="p-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Status</th>
             </tr>
           </thead>
           <tbody>
             {products.map(p => (
-              <tr key={p._id} className="border-t">
-                <td className="p-4">{p.productName}</td>
-                <td className="p-4">{p.category}</td>
-                <td className="p-4 font-bold">{p.currentStock}</td>
+              <tr key={p._id} className="border-t border-[#F1F3F9] hover:bg-slate-50/50">
+                <td className="p-4 font-medium text-gray-800">{p.productName}</td>
+                <td className="p-4 text-gray-500 text-sm">{p.category}</td>
+                <td className="p-4 font-bold text-gray-800">{p.currentStock}</td>
                 <td className="p-4">
-                  {p.currentStock > p.safetyStock + 10 ? <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-bold">Healthy</span> :
-                   p.currentStock > p.safetyStock ? <span className="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm font-bold">Low Stock</span> :
-                   <span className="bg-red-100 text-red-800 px-2 py-1 rounded text-sm font-bold">Critical</span>}
+                  {p.currentStock > p.safetyStock + 10 ? (
+                    <span className="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full text-xs font-medium border border-emerald-100">Healthy</span>
+                  ) : p.currentStock > p.safetyStock ? (
+                    <span className="bg-amber-50 text-amber-700 px-3 py-1 rounded-full text-xs font-medium border border-amber-100">Low Stock</span>
+                  ) : (
+                    <span className="bg-rose-50 text-rose-700 px-3 py-1 rounded-full text-xs font-medium border border-rose-100">Critical</span>
+                  )}
                 </td>
               </tr>
             ))}
@@ -86,16 +247,16 @@ const Inventory = ({ products, addLog }) => {
   );
 };
 
-const ForecastPage = ({ addLog }) => {
+const ForecastPage = ({ addLog, fetchProducts }) => {
   const [forecasts, setForecasts] = useState([]);
   const [orderDraft, setOrderDraft] = useState({});
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`${API}/api/forecasts`).then(res => { // ADDED /api
+    axios.get(`${API}/api/forecasts`).then(res => {
       setForecasts(res.data);
       const initialDraft = {};
-      res.data.forEach(f => { if(f.recommendedOrder > 0) initialDraft[f.productId] = f.recommendedOrder; });
+      res.data.forEach(f => { if (f.recommendedOrder > 0) initialDraft[f.productId] = f.recommendedOrder; });
       setOrderDraft(initialDraft);
     });
   }, []);
@@ -106,110 +267,159 @@ const ForecastPage = ({ addLog }) => {
     addLog('Merchant approved order.');
     addLog('Validating and grouping by supplier...');
     const items = Object.entries(orderDraft).map(([productId, quantity]) => ({ productId, quantity }));
-    if(items.length === 0) return alert('Order is empty');
-    
+    if (items.length === 0) return alert('Order is empty');
     try {
-      const res = await axios.post(`${API}/api/orders`, { items }); // ADDED /api
+      const res = await axios.post(`${API}/api/orders`, { items });
       res.data.orders.forEach(o => addLog(`Generated PO: ${o.orderId} for ${o.supplier}`));
       addLog('Simulated supplier order sent.');
+      if (fetchProducts) fetchProducts();
       alert('Orders submitted successfully!');
       navigate('/orders');
-    } catch(e) { alert('Error submitting order'); }
+    } catch (e) {
+      alert('Error submitting order');
+    }
   };
 
   return (
-    <div className="p-6">
-      <h2 className="text-2xl font-bold mb-6">AI Forecast & Recommendations</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          {forecasts.map(f => (
-            <div key={f._id} className="bg-white p-4 rounded-lg shadow mb-4 border-l-4 border-purple-500">
-              <h3 className="font-bold text-lg">{f.productName}</h3>
-              <p className="text-sm text-gray-500 mb-2">{f.explanation}</p>
-              <div className="flex items-center gap-4 bg-gray-50 p-2 rounded mt-4">
-                <span>Recommended Order:</span>
-                <button onClick={() => handleUpdateQty(f.productId, -1)} className="bg-gray-300 px-3 py-1 rounded font-bold">-</button>
-                <span className="font-bold text-lg">{orderDraft[f.productId] || 0}</span>
-                <button onClick={() => handleUpdateQty(f.productId, 1)} className="bg-gray-300 px-3 py-1 rounded font-bold">+</button>
+    <div className="space-y-6">
+      <div>
+        <h2 className="text-2xl font-bold text-gray-800">AI Forecast &amp; Recommendations</h2>
+        <p className="text-xs text-gray-500">7-day machine-learning demand forecast</p>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {forecasts.map(f => (
+          <div key={f._id} className="bg-white rounded-3xl p-5 border border-[#E8EAF3] shadow-sm flex flex-col justify-between">
+            <div>
+              <h3 className="font-bold text-base text-gray-800 mb-1">{f.productName}</h3>
+              <p className="text-xs text-gray-500 mb-4 leading-relaxed">{f.explanation}</p>
+            </div>
+            <div className="flex items-center justify-between bg-[#F8F9FD] p-3 rounded-2xl border border-[#E8EAF3]">
+              <span className="text-xs font-medium text-gray-600">Recommended Order:</span>
+              <div className="flex items-center gap-2">
+                <button onClick={() => handleUpdateQty(f.productId, -1)} className="w-7 h-7 flex items-center justify-center bg-white border border-gray-200 rounded-full font-bold text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">-</button>
+                <span className="font-bold text-sm text-gray-800 min-w-6 text-center">{orderDraft[f.productId] || 0}</span>
+                <button onClick={() => handleUpdateQty(f.productId, 1)} className="w-7 h-7 flex items-center justify-center bg-white border border-gray-200 rounded-full font-bold text-sm text-gray-700 hover:bg-gray-100 cursor-pointer">+</button>
               </div>
             </div>
-          ))}
-          {forecasts.length > 0 ? (
-            <button onClick={submitOrder} className="w-full bg-green-600 text-white py-3 rounded-lg font-bold hover:bg-green-700 mt-4 shadow-lg">
-              CONFIRM & ORDER
-            </button>
-          ) : (
-            <p className="text-gray-500 italic">No forecasts generated yet. Go to Inventory to analyze data.</p>
-          )}
-        </div>
+          </div>
+        ))}
       </div>
+      {forecasts.length > 0 ? (
+        <button
+          onClick={submitOrder}
+          className="w-full py-3 rounded-full bg-[#5B5CE6] text-white text-sm font-medium hover:bg-[#4d4ecb] transition-all cursor-pointer shadow-sm hover:translate-y-[-1px]"
+          style={{ transitionTimingFunction: 'cubic-bezier(0.34, 1.56, 0.64, 1)' }}
+        >
+          Confirm &amp; Order
+        </button>
+      ) : (
+        <p className="text-gray-400 italic text-sm">No forecasts generated yet. Go to Inventory to analyze data.</p>
+      )}
     </div>
   );
 };
 
-const OrdersPage = () => {
+const OrdersPage = ({ fetchProducts }) => {
   const [orders, setOrders] = useState([]);
-  
-  const fetchOrders = () => axios.get(`${API}/api/orders`).then(res => setOrders(res.data)); // ADDED /api
+
+  const fetchOrders = () => axios.get(`${API}/api/orders`).then(res => setOrders(res.data));
   useEffect(() => { fetchOrders(); }, []);
 
   const markReceived = async (id) => {
-    await axios.post(`${API}/api/orders/${id}/receive`); // ADDED /api
+    await axios.post(`${API}/api/orders/${id}/receive`);
     fetchOrders();
+    if (fetchProducts) fetchProducts();
     alert('Inventory updated!');
   };
 
   return (
-    <div className="p-6">
-      <h2 className="text-2xl font-bold mb-6">Purchase Orders</h2>
-      <div className="space-y-4">
+    <div className="space-y-6">
+      <div>
+        <h2 className="text-2xl font-bold text-gray-800">Purchase Orders</h2>
+        <p className="text-xs text-gray-500">Track supplier shipments and fulfillments</p>
+      </div>
+      <div className="space-y-3">
         {orders.map(o => (
-          <div key={o._id} className="bg-white p-4 rounded-lg shadow flex justify-between items-center">
+          <div key={o._id} className="bg-white rounded-3xl p-5 flex justify-between items-center border border-[#E8EAF3] shadow-sm">
             <div>
-              <div className="font-bold text-lg">{o.orderId} - {o.supplier}</div>
-              <div className="text-sm text-gray-500">Items: {o.totalItems} | Expected: {new Date(o.expectedDeliveryDate).toLocaleDateString()}</div>
-              <div className="text-sm mt-1">Status: <span className={`font-bold ${o.status==='Received'?'text-green-600':'text-orange-500'}`}>{o.status}</span></div>
+              <div className="font-bold text-base text-gray-800">{o.orderId} - {o.supplier}</div>
+              <div className="text-xs text-gray-500 mt-1">Items: {o.totalItems} | Expected: {new Date(o.expectedDeliveryDate).toLocaleDateString()}</div>
+              <div className="text-xs mt-1.5">
+                Status: <span className={`font-semibold ${o.status==='Received'?'text-emerald-600':'text-amber-600'}`}>{o.status}</span>
+              </div>
             </div>
             {o.status === 'Pending' && (
-              <button onClick={() => markReceived(o._id)} className="bg-blue-600 text-white px-4 py-2 rounded font-bold shadow hover:bg-blue-700">MARK AS RECEIVED</button>
+              <button
+                onClick={() => markReceived(o._id)}
+                className="px-4 py-2 rounded-full bg-[#5B5CE6] text-white text-xs font-medium hover:bg-[#4d4ecb] transition-all cursor-pointer shadow-sm hover:translate-y-[-1px]"
+                style={{ transitionTimingFunction: 'cubic-bezier(0.34, 1.56, 0.64, 1)' }}
+              >
+                Mark as Received
+              </button>
             )}
           </div>
         ))}
-        {orders.length === 0 && <p className="text-gray-500">No orders placed yet.</p>}
+        {orders.length === 0 && <p className="text-gray-400 text-sm">No orders placed yet.</p>}
       </div>
     </div>
   );
 };
 
-const RecordSale = ({ products, fetchProducts, addLog }) => {
+const RecordSale = ({ products = [], fetchProducts, addLog }) => {
   const [form, setForm] = useState({ productId: '', quantity: 1 });
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post(`${API}/api/sales`, form); // ADDED /api
-      addLog(`Recorded sale: ${form.quantity} unit(s) of ${products.find(p=>p.productId===form.productId)?.productName}`);
-      fetchProducts();
+      await axios.post(`${API}/api/sales`, form);
+      const prod = products.find(p => p.productId === form.productId);
+      addLog(`Recorded sale: ${form.quantity} unit(s) of ${prod?.productName || form.productId}`);
+      if (fetchProducts) fetchProducts();
       alert('Sale recorded successfully!');
-    } catch(e) { alert('Error recording sale. Check stock limits.'); }
+    } catch (e) {
+      alert('Error recording sale. Check stock limits.');
+    }
   };
 
   return (
-    <div className="p-6 max-w-md">
-      <h2 className="text-2xl font-bold mb-6">Simulate Sale</h2>
-      <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow space-y-4">
+    <div className="max-w-md space-y-6">
+      <div>
+        <h2 className="text-2xl font-bold text-gray-800">Record Sale</h2>
+        <p className="text-xs text-gray-500">Simulate customer order transaction</p>
+      </div>
+      <form onSubmit={handleSubmit} className="bg-white rounded-3xl p-6 space-y-4 border border-[#E8EAF3] shadow-sm">
         <div>
-          <label className="block text-sm font-bold mb-2">Product</label>
-          <select className="w-full border p-2 rounded" required onChange={e => setForm({...form, productId: e.target.value})}>
+          <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Product</label>
+          <select
+            className="w-full border border-gray-200 p-2.5 rounded-xl text-sm bg-[#F8F9FD] focus:outline-none focus:ring-2 focus:ring-indigo-100"
+            required
+            value={form.productId}
+            onChange={e => setForm({ ...form, productId: e.target.value })}
+          >
             <option value="">Select a product...</option>
-            {products.map(p => <option key={p.productId} value={p.productId}>{p.productName} (Stock: {p.currentStock})</option>)}
+            {products.map(p => (
+              <option key={p.productId} value={p.productId}>{p.productName} (Stock: {p.currentStock})</option>
+            ))}
           </select>
         </div>
         <div>
-          <label className="block text-sm font-bold mb-2">Quantity Sold</label>
-          <input type="number" min="1" className="w-full border p-2 rounded" required value={form.quantity} onChange={e => setForm({...form, quantity: parseInt(e.target.value)})}/>
+          <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Quantity Sold</label>
+          <input
+            type="number"
+            min="1"
+            className="w-full border border-gray-200 p-2.5 rounded-xl text-sm bg-[#F8F9FD] focus:outline-none focus:ring-2 focus:ring-indigo-100"
+            required
+            value={form.quantity}
+            onChange={e => setForm({ ...form, quantity: parseInt(e.target.value) || 1 })}
+          />
         </div>
-        <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded font-bold hover:bg-blue-700 shadow">RECORD SALE</button>
+        <button
+          type="submit"
+          className="w-full py-2.5 rounded-full bg-[#5B5CE6] text-white text-sm font-medium hover:bg-[#4d4ecb] transition-all cursor-pointer shadow-sm hover:translate-y-[-1px]"
+          style={{ transitionTimingFunction: 'cubic-bezier(0.34, 1.56, 0.64, 1)' }}
+        >
+          Record Sale
+        </button>
       </form>
     </div>
   );
@@ -219,23 +429,28 @@ export default function App() {
   const [products, setProducts] = useState([]);
   const [logs, setLogs] = useState(['Agent initialized. Ready to assist.']);
 
-  const addLog = (msg) => setLogs(prev => [msg, ...prev].slice(0, 10));
-  const fetchProducts = () => axios.get(`${API}/api/products`).then(res => setProducts(res.data)); // ADDED /api
+  const addLog = msg => setLogs(prev => [msg, ...prev].slice(0, 10));
+  const fetchProducts = () => axios.get(`${API}/api/products`).then(res => setProducts(res.data)).catch(err => console.error('Fetch products error:', err));
 
   useEffect(() => { fetchProducts(); }, []);
 
   return (
     <Router>
-      <div className="flex bg-gray-50 min-h-screen">
-        <Sidebar logs={logs} />
-        <div className="flex-1 overflow-y-auto">
-          <Routes>
-            <Route path="/" element={<Dashboard products={products} />} />
-            <Route path="/inventory" element={<Inventory products={products} addLog={addLog} />} />
-            <Route path="/forecast" element={<ForecastPage addLog={addLog} />} />
-            <Route path="/orders" element={<OrdersPage />} />
-            <Route path="/record-sale" element={<RecordSale products={products} fetchProducts={fetchProducts} addLog={addLog} />} />
-          </Routes>
+      <div className="bg-[#F4F5FB] min-h-screen flex flex-col">
+        <Header />
+        <div className="grid grid-cols-[240px_1fr_300px] gap-6 p-6 flex-1 min-h-0">
+          <Sidebar />
+          <main className="overflow-y-auto min-h-0 flex flex-col flex-1">
+            <Routes>
+              <Route path="/" element={<Dashboard products={products} />} />
+              <Route path="/inventory" element={<Inventory products={products} fetchProducts={fetchProducts} addLog={addLog} />} />
+              <Route path="/forecast" element={<ForecastPage addLog={addLog} fetchProducts={fetchProducts} />} />
+              <Route path="/orders" element={<OrdersPage fetchProducts={fetchProducts} />} />
+              <Route path="/record-sale" element={<RecordSale products={products} fetchProducts={fetchProducts} addLog={addLog} />} />
+              <Route path="/ai-agent" element={<AIBox API={API} products={products} fetchProducts={fetchProducts} logs={logs} addLog={addLog} />} />
+            </Routes>
+          </main>
+          <RightPanel products={products} />
         </div>
       </div>
     </Router>
